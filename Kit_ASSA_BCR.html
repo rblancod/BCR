@@ -774,6 +774,11 @@
           <div class="cob-name">AP Desempleo - Mis Ingresos Protegidos</div>
           <span class="cob-tag tag-personas">Renta · Desempleo</span>
         </button>
+        <button class="cobertura-btn" onclick="openCobertura('retiro-seguro', this)">
+          <div class="cob-icon">🏧</div>
+          <div class="cob-name">Retiro Seguro</div>
+          <span class="cob-tag tag-personas">Robo · Efectivo · ATM</span>
+        </button>
       </div>
 
       <!-- DETAIL PANELS PERSONAS -->
@@ -818,8 +823,8 @@
           <div class="content-section">
             <div class="content-label">Asistencias incluidas (sin costo adicional)</div>
             <div class="highlight-box green">
-              <strong>Asistencias Viales:</strong> Cambio de llantas · Cerrajería para apertura de vehículo · Envío de combustible · Paso de corriente<br><br>
-              <strong>Asistencias Médicas:</strong> Orientación médica telefónica · Examen de hemograma básico (1 evento, carencia 6 meses) · Descuentos hasta 30% en red médica y especialidades · Descuentos hasta 20% en laboratorios
+              <strong>Asistencias Viales:</strong> Cambio de llantas · Cerrajería para apertura de vehículo · Paso de corriente (3 eventos por año, máximo $50) · Envío de combustible (el asegurado asume el pago del combustible) · Referencia y coordinación de remolque<br><br>
+              <strong>Asistencias Médicas:</strong> Orientación médica telefónica (12 eventos, 1 al mes) · Examen de hemograma básico (1 evento, carencia 6 meses) · Descuentos en red médica y veterinaria (ilimitado)
             </div>
           </div>
           <div class="content-section"><div class="content-label">Asegurables – ¿Qué tarjetas aplican?</div>
@@ -867,10 +872,12 @@
           <div class="content-section" style="margin-top:16px">
             <div class="content-label">Asistencias incluidas (sin costo adicional)</div>
             <ul class="check-list">
-              <li>Asistencia Vial: cambio llantas, cerrajería, combustible, paso corriente, remolque – 3 eventos / $50 límite; remolque ilimitado</li>
+              <li>Asistencias Viales: cambio de llantas, cerrajería para apertura de vehículo y paso de corriente – 3 eventos por año, máximo $50</li>
+              <li>Envío de combustible (el asegurado asume el pago del combustible)</li>
+              <li>Referencia y coordinación de remolque</li>
               <li>Orientación médica telefónica: 12 eventos (1 al mes)</li>
-              <li>Examen de sangre: 1 evento, carencia 6 meses</li>
-              <li>Descuentos red médica y veterinarios: ilimitado</li>
+              <li>Examen de hemograma básico: 1 evento, carencia 6 meses</li>
+              <li>Descuentos en red médica y veterinaria: ilimitado</li>
             </ul>
           </div></div>
         <div id="view-seguridad-plus-activacion" class="view-content">
@@ -977,6 +984,178 @@
             <li>Pérdidas por actividades ilegales del asegurado.</li>
             <li>Fraudes ocurridos antes de la vigencia del seguro.</li>
             <li>Extravío de documentos no cubiertos en la póliza.</li>
+          </ul></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RETIRO SEGURO PANEL -->
+      <div class="detail-panel" id="panel-retiro-seguro">
+        <div class="detail-header">
+          <div>
+            <h3>🏧 Retiro Seguro</h3>
+            <p>Seguro de Robo de Efectivo en Cajero Automático – BCR Personas</p>
+          </div>
+          <button class="detail-close" onclick="closePanel('retiro-seguro')">✕</button>
+        </div>
+        <div class="view-tabs">
+          <button class="view-btn active" onclick="openView('retiro-seguro','cubre',this)">
+            <span class="view-btn-icon">✅</span>
+            <span class="view-btn-label">Qué Cubre</span>
+          </button>
+          <button class="view-btn" onclick="openView('retiro-seguro','planes',this)">
+            <span class="view-btn-icon">💰</span>
+            <span class="view-btn-label">Planes</span>
+          </button>
+          <button class="view-btn" onclick="openView('retiro-seguro','activacion',this)">
+            <span class="view-btn-icon">🚀</span>
+            <span class="view-btn-label">Gestionar Activación</span>
+          </button>
+          <button class="view-btn" onclick="openView('retiro-seguro','cierre',this)">
+            <span class="view-btn-icon">🎯</span>
+            <span class="view-btn-label">Cierre Efectivo</span>
+          </button>
+        </div>
+        <div id="view-retiro-seguro-cubre" class="view-content active"><div class="content-section">
+            <div class="content-label">Cobertura principal</div>
+            <div class="highlight-box green">
+              <strong>Robo de efectivo:</strong> Se indemniza al Asegurado la cantidad de dinero que le sea robada, siempre que el robo ocurra dentro de las <strong>2 horas siguientes</strong> de haber retirado el dinero del cajero automático, sucursal bancaria o puntos autorizados por la entidad financiera, hasta el monto de la suma asegurada.<br><br>
+              <strong>Cantidad de eventos:</strong> 2 eventos por año.
+            </div>
+          </div>
+          <div class="content-section">
+            <div class="content-label">Definiciones importantes</div>
+            <ul class="check-list">
+              <li><strong>Robo:</strong> Apoderamiento ilegítimo de un bien ajeno, mediante el uso de violencia o intimidación sobre las personas o fuerza en las cosas.</li>
+              <li><strong>Estado de indefensión:</strong> Situación en la que una persona se encuentra vulnerable ante una amenaza o hechos externos que violenten contra su propia libertad de actuar.</li>
+            </ul>
+          </div>
+          <div class="content-section">
+            <div class="content-label">Requisitos en caso de siniestro</div>
+            <ul class="check-list">
+              <li>Carta de reclamo emitida y firmada por el Asegurado, detallando los hechos, la hora y lugar de ocurrencia, así como la cantidad de dinero robada.</li>
+              <li>Copia del documento de identidad del Asegurado.</li>
+              <li>Denuncia judicial del delito ante el O.I.J., interpuesta dentro de las 48 horas siguientes a la ocurrencia del siniestro.</li>
+              <li>Certificación de la entidad financiera donde se detalle el retiro del dinero en el cajero automático, sucursal bancaria o punto autorizado.</li>
+            </ul>
+          </div>
+          <div class="note-box">⚠️ <strong>Importante:</strong> El primer cobro se realiza en plataforma. Los cobros posteriores los realiza la Corredora en la tarjeta indicada en el Sistema.</div></div>
+        <div id="view-retiro-seguro-planes" class="view-content"><div class="currency-toggle-wrap">
+            <span class="currency-toggle-label">Moneda:</span>
+            <div class="currency-toggle">
+              <button class="currency-btn active" onclick="switchCurrency('rs','col',this)">₡ Colones</button>
+              <button class="currency-btn" onclick="switchCurrency('rs','dol',this)">$ Dólares</button>
+            </div>
+          </div>
+          <div id="rs-col" class="currency-panel active">
+            <div style="overflow-x:auto">
+            <table class="plans-table">
+              <tr><th>Cobertura</th><th>Plan 1</th><th>Plan 2</th><th>Plan 3</th><th>Plan 4</th><th>Plan 5</th></tr>
+              <tr><td>Robo de efectivo en ATM o cajero físico</td><td>₡30,000</td><td>₡60,000</td><td>₡150,000</td><td>₡300,000</td><td>₡510,000</td></tr>
+              <tr class="section-row"><td><strong>Prima Mensual</strong></td><td>₡150</td><td>₡250</td><td>₡500</td><td>₡1,100</td><td>₡1,800</td></tr>
+            </table>
+            </div>
+          </div>
+          <div id="rs-dol" class="currency-panel">
+            <div style="overflow-x:auto">
+            <table class="plans-table">
+              <tr><th>Cobertura</th><th>Plan 1</th><th>Plan 2</th><th>Plan 3</th><th>Plan 4</th><th>Plan 5</th></tr>
+              <tr><td>Robo de efectivo en ATM o cajero físico</td><td>$50</td><td>$100</td><td>$250</td><td>$500</td><td>$850</td></tr>
+              <tr class="section-row"><td><strong>Prima Mensual</strong></td><td>$0.25</td><td>$0.45</td><td>$0.85</td><td>$1.85</td><td>$3.00</td></tr>
+            </table>
+            </div>
+          </div></div>
+        <div id="view-retiro-seguro-activacion" class="view-content">
+          <div class="activation-grid">
+            <div class="activation-card">
+              <div class="activation-icon">📋</div>
+              <div class="activation-title">Plataforma S2+</div>
+              <div class="activation-desc">Ingresa la venta del cliente directamente en la plataforma S2+ para emisión y cobro inmediato.</div>
+              <a class="activation-btn" href="https://s2plus.online/private" target="_blank">🚀 Ingresar Venta</a>
+            </div>
+          </div></div>
+        <div id="view-retiro-seguro-cierre" class="view-content">
+          <div class="cierre-section">
+            <div class="cierre-section-header">
+              <span class="cierre-section-icon">🎙️</span>
+              <span class="cierre-section-title">Guion de Venta</span>
+            </div>
+            <div class="guion-step"><div class="guion-num">1</div><div class="guion-label">Apertura</div><div class="guion-text"><em>"Don/Doña [nombre]</em>, ¿le ha pasado o ha escuchado de personas a las que asaltan justo después de sacar dinero del cajero?"</div></div>
+            <div class="guion-step"><div class="guion-num">2</div><div class="guion-label">Conexión emocional</div><div class="guion-text">"El momento más vulnerable es justo al salir del cajero. Un descuido de segundos puede significar perder todo el efectivo que acaba de retirar."</div></div>
+            <div class="guion-step"><div class="guion-num">3</div><div class="guion-label">Presentación del producto</div><div class="guion-text">"Por eso existe <em>Retiro Seguro</em>, que le devuelve el dinero robado si sufre un robo dentro de las 2 horas siguientes de haber retirado efectivo del cajero, sucursal o punto autorizado."</div></div>
+            <div class="guion-step"><div class="guion-num">4</div><div class="guion-label">Valor agregado</div><div class="guion-text">"Cubre hasta 2 eventos al año y usted elige el plan según cuánto suele retirar, protegiendo desde ₡30,000 hasta ₡510,000."</div></div>
+            <div class="guion-step"><div class="guion-num">5</div><div class="guion-label">Cierre</div><div class="guion-text">"Todo esto desde <em>₡150 al mes</em>, apenas ₡5 por día. ¿Le parece bien que lo activemos hoy mismo con su tarjeta?"</div></div>
+          </div>
+          <div class="cierre-section">
+            <div class="cierre-section-header">
+              <span class="cierre-section-icon">💬</span>
+              <span class="cierre-section-title">Manejo de Objeciones</span>
+            </div>
+            <div class="objecion-item"><div class="objecion-q" onclick="toggleObj(this)"><span class="objecion-q-icon">💬</span>No creo que me vaya a pasar<span class="objecion-arrow">▼</span></div><div class="objecion-a">Los robos a la salida del cajero son de los más comunes en el país y ocurren en segundos. Por ₡150 al mes tiene la tranquilidad de recuperar su dinero si le sucede.</div></div>
+            <div class="objecion-item"><div class="objecion-q" onclick="toggleObj(this)"><span class="objecion-q-icon">💬</span>Casi no uso efectivo<span class="objecion-arrow">▼</span></div><div class="objecion-a">Justamente por eso: las pocas veces que retira efectivo suelen ser montos importantes. Este seguro protege precisamente esos momentos, y el plan se ajusta a lo que usted acostumbra retirar.</div></div>
+            <div class="objecion-item"><div class="objecion-q" onclick="toggleObj(this)"><span class="objecion-q-icon">💬</span>Es un gasto más<span class="objecion-arrow">▼</span></div><div class="objecion-a">₡150 al mes son ₡5 por día, menos que un caramelo. Si le roban ₡300,000 a la salida del cajero, el seguro se lo devuelve. La relación costo-beneficio es enorme.</div></div>
+            <div class="objecion-item"><div class="objecion-q" onclick="toggleObj(this)"><span class="objecion-q-icon">💬</span>¿Cómo cancelo si no lo quiero?<span class="objecion-arrow">▼</span></div><div class="objecion-a">La cancelación es sencilla y puede hacerla cuando lo desee. No tiene permanencia mínima y el cobro es mensual, directo a su tarjeta.</div></div>
+          </div></div>
+
+        <div class="zona-asesor-wrap">
+          <button class="zona-asesor-toggle" id="asesor-toggle-retiro-seguro" onclick="toggleZonaAsesor('retiro-seguro')">
+            <div class="zona-asesor-left">
+              <span class="zona-asesor-icon">🎓</span>
+              <div class="zona-asesor-text">
+                <span class="zona-asesor-title">ZONA ASESOR</span>
+                <span class="zona-asesor-sub">Formación interna: aprende el producto y cómo venderlo</span>
+              </div>
+            </div>
+            <span class="zona-asesor-arrow">▼</span>
+          </button>
+          <div class="zona-asesor-content" id="asesor-content-retiro-seguro">
+            <div class="asesor-tabs">
+              <button class="asesor-tab active" onclick="openAsesorTab('retiro-seguro','por-que',this)">💡 Por qué Promoverlo</button><button class="asesor-tab" onclick="openAsesorTab('retiro-seguro','perfiles',this)">👤 Perfiles</button><button class="asesor-tab" onclick="openAsesorTab('retiro-seguro','momentos',this)">⏱️ Momentos Clave</button><button class="asesor-tab" onclick="openAsesorTab('retiro-seguro','guion',this)">🎙️ Guion de Venta</button><button class="asesor-tab" onclick="openAsesorTab('retiro-seguro','objeciones',this)">💬 Objeciones</button><button class="asesor-tab" onclick="openAsesorTab('retiro-seguro','exclusiones',this)">🚫 Exclusiones</button>
+            </div>
+            <div id="asesor-retiro-seguro-por-que" class="asesor-content active"><div class="content-section">
+            <div class="content-label">🎯 Por qué es fundamental hablarlo</div>
+            <div class="highlight-box">El robo de efectivo a la salida del cajero es uno de los delitos más frecuentes y de mayor impacto emocional en Costa Rica. El cliente retira su dinero confiado y, en cuestión de minutos, puede perderlo todo. Retiro Seguro cubre justamente ese momento de vulnerabilidad.</div>
+            <ul class="check-list">
+              <li>El retiro de efectivo es una operación cotidiana de la mayoría de los clientes BCR.</li>
+              <li>Los asaltos "express" a la salida del cajero ocurren en segundos y a plena luz del día.</li>
+              <li>Es un seguro de prima muy baja, fácil de cerrar por su bajo costo.</li>
+              <li>Complementa perfectamente otros seguros de la tarjeta.</li>
+            </ul>
+          </div>
+          <div class="content-section">
+            <div class="content-label">💎 Por qué el cliente debe adquirirlo</div>
+            <ul class="check-list">
+              <li>Le devuelven el dinero robado dentro de las 2 horas siguientes al retiro, hasta la suma asegurada.</li>
+              <li>Cubre hasta 2 eventos por año.</li>
+              <li>Planes flexibles desde ₡30,000 hasta ₡510,000 de cobertura.</li>
+              <li>Prima accesible desde ₡150/mes (apenas ₡5 por día).</li>
+              <li>Disponible también en dólares desde $0.25/mes.</li>
+            </ul>
+          </div></div><div id="asesor-retiro-seguro-perfiles" class="asesor-content"><div class="profiles-grid">
+            <div class="profile-card"><div class="profile-icon">💵</div><div class="profile-name">Usuario frecuente de efectivo</div><div class="profile-desc">Retira dinero del cajero con regularidad para sus gastos diarios.</div></div>
+            <div class="profile-card"><div class="profile-icon">👵</div><div class="profile-name">Adulto mayor</div><div class="profile-desc">Blanco frecuente de asaltos a la salida del cajero, mayor necesidad de protección.</div></div>
+            <div class="profile-card"><div class="profile-icon">🏪</div><div class="profile-name">Comerciante / pulpero</div><div class="profile-desc">Retira montos importantes en efectivo para su negocio.</div></div>
+            <div class="profile-card"><div class="profile-icon">👷</div><div class="profile-name">Trabajador que cobra en efectivo</div><div class="profile-desc">Suele retirar su salario completo el día de pago.</div></div>
+            <div class="profile-card"><div class="profile-icon">🌃</div><div class="profile-name">Persona que usa cajeros de noche</div><div class="profile-desc">Mayor exposición a robos en horarios y zonas de riesgo.</div></div>
+          </div></div><div id="asesor-retiro-seguro-momentos" class="asesor-content"><div class="momentos-list">
+            <div class="momento-item"><div class="momento-icon">🏧</div><div class="momento-text"><strong>Cuando el cliente hace un retiro en ventanilla o cajero</strong>Es el momento ideal para conectar con el riesgo directo del efectivo.</div></div>
+            <div class="momento-item"><div class="momento-icon">📰</div><div class="momento-text"><strong>Cuando el cliente comenta sobre inseguridad o asaltos</strong>Usa el contexto para presentar la solución concreta.</div></div>
+            <div class="momento-item"><div class="momento-icon">💳</div><div class="momento-text"><strong>Al entregar una tarjeta nueva</strong>El cliente está receptivo a proteger su nuevo instrumento y sus retiros.</div></div>
+            <div class="momento-item"><div class="momento-icon">💼</div><div class="momento-text"><strong>Cliente que maneja efectivo de un negocio</strong>Necesita retirar montos altos con frecuencia, mayor exposición.</div></div>
+          </div></div><div id="asesor-retiro-seguro-guion" class="asesor-content"><div class="guion-step"><div class="guion-num">1</div><div class="guion-label">Apertura</div><div class="guion-text"><em>"Don/Doña [nombre]</em>, ¿le ha pasado o ha escuchado de personas a las que asaltan justo después de sacar dinero del cajero?"</div></div>
+            <div class="guion-step"><div class="guion-num">2</div><div class="guion-label">Conexión emocional</div><div class="guion-text">"El momento más vulnerable es justo al salir del cajero. Un descuido de segundos puede significar perder todo el efectivo que acaba de retirar."</div></div>
+            <div class="guion-step"><div class="guion-num">3</div><div class="guion-label">Presentación del producto</div><div class="guion-text">"Por eso existe <em>Retiro Seguro</em>, que le devuelve el dinero robado si sufre un robo dentro de las 2 horas siguientes de haber retirado efectivo del cajero, sucursal o punto autorizado."</div></div>
+            <div class="guion-step"><div class="guion-num">4</div><div class="guion-label">Valor agregado</div><div class="guion-text">"Cubre hasta 2 eventos al año y usted elige el plan según cuánto suele retirar, protegiendo desde ₡30,000 hasta ₡510,000."</div></div>
+            <div class="guion-step"><div class="guion-num">5</div><div class="guion-label">Cierre</div><div class="guion-text">"Todo esto desde <em>₡150 al mes</em>, apenas ₡5 por día. ¿Le parece bien que lo activemos hoy mismo con su tarjeta?"</div></div></div><div id="asesor-retiro-seguro-objeciones" class="asesor-content"><div class="objecion-item"><div class="objecion-q" onclick="toggleObj(this)"><span class="objecion-q-icon">💬</span>No creo que me vaya a pasar<span class="objecion-arrow">▼</span></div><div class="objecion-a">Los robos a la salida del cajero son de los más comunes en el país y ocurren en segundos. Por ₡150 al mes tiene la tranquilidad de recuperar su dinero si le sucede.</div></div>
+            <div class="objecion-item"><div class="objecion-q" onclick="toggleObj(this)"><span class="objecion-q-icon">💬</span>Casi no uso efectivo<span class="objecion-arrow">▼</span></div><div class="objecion-a">Justamente por eso: las pocas veces que retira efectivo suelen ser montos importantes. Este seguro protege precisamente esos momentos, y el plan se ajusta a lo que usted acostumbra retirar.</div></div>
+            <div class="objecion-item"><div class="objecion-q" onclick="toggleObj(this)"><span class="objecion-q-icon">💬</span>Es un gasto más<span class="objecion-arrow">▼</span></div><div class="objecion-a">₡150 al mes son ₡5 por día, menos que un caramelo. Si le roban ₡300,000 a la salida del cajero, el seguro se lo devuelve. La relación costo-beneficio es enorme.</div></div>
+            <div class="objecion-item"><div class="objecion-q" onclick="toggleObj(this)"><span class="objecion-q-icon">💬</span>¿Cómo cancelo si no lo quiero?<span class="objecion-arrow">▼</span></div><div class="objecion-a">La cancelación es sencilla y puede hacerla cuando lo desee. No tiene permanencia mínima y el cobro es mensual, directo a su tarjeta.</div></div></div><div id="asesor-retiro-seguro-exclusiones" class="asesor-content"><ul class="excl-list">
+            <li>Pérdidas por guerra civil o internacional, terrorismo, motín, huelga, movimiento subversivo, conmociones populares o fenómenos catastróficos.</li>
+            <li>Acción u omisión premeditada, dolo o culpa del Asegurado, hurto o descuido, así como daños consecuenciales (daño moral, lucro cesante, pérdida de beneficios o interrupción de negocio).</li>
+            <li>Pérdidas por responsabilidad directa de la entidad financiera (mal funcionamiento del cajero) o cuando los autores del delito sean empleados de dicha entidad.</li>
+            <li>Pérdidas que ya hayan sido indemnizadas al Asegurado por cualquier otro seguro.</li>
+            <li>Cuando el robo sea a un tercero que, con autorización del tarjetahabiente, haya retirado el dinero.</li>
+            <li>Cuando el robo sea realizado por un familiar hasta el cuarto grado de consanguinidad o amigo del Asegurado.</li>
           </ul></div>
           </div>
         </div>
@@ -1927,7 +2106,7 @@ function downloadContingency(id) {
 }
 
 function switchCurrency(prefix, currency, btn) {
-  const wrap = btn.closest('.tab-content');
+  const wrap = btn.closest('.view-content') || btn.closest('.tab-content');
   wrap.querySelectorAll('.currency-panel').forEach(p => p.classList.remove('active'));
   wrap.querySelectorAll('.currency-btn').forEach(b => b.classList.remove('active'));
   document.getElementById(prefix + '-' + currency).classList.add('active');
