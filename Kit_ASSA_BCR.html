@@ -703,6 +703,43 @@
 
 
 
+  /* ===== ACELERADOR ===== */
+  .acelerador-header .section-header-accent { background: linear-gradient(180deg,#FF8A00,#FF5A00); }
+  .acelerador-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 18px;
+    padding: 20px;
+  }
+  .acelerador-card {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+    transition: transform .15s, box-shadow .15s;
+    cursor: zoom-in;
+  }
+  .acelerador-card:hover { transform: translateY(-3px); box-shadow: 0 8px 22px rgba(0,0,0,0.12); }
+  .acelerador-card img { width: 100%; height: auto; display: block; }
+  .acelerador-cap {
+    padding: 10px 14px; font-size: 13px; font-weight: 600; color: var(--gray-600);
+    border-top: 1px solid var(--gray-100);
+  }
+  .acelerador-empty { padding: 30px 20px; text-align: center; color: var(--gray-600); font-size: 14px; }
+  /* Lightbox */
+  .lightbox-overlay {
+    display: none; position: fixed; inset: 0; z-index: 1000;
+    background: rgba(0,0,0,0.85); align-items: center; justify-content: center; padding: 24px;
+  }
+  .lightbox-overlay.open { display: flex; }
+  .lightbox-overlay img { max-width: 100%; max-height: 92vh; border-radius: 10px; box-shadow: 0 10px 40px rgba(0,0,0,0.5); }
+  .lightbox-close {
+    position: absolute; top: 18px; right: 24px; background: rgba(255,255,255,0.15);
+    color: #fff; border: none; font-size: 26px; width: 44px; height: 44px; border-radius: 50%;
+    cursor: pointer; line-height: 1;
+  }
+  .lightbox-close:hover { background: rgba(255,255,255,0.3); }
 </style>
 </head>
 <body>
@@ -732,12 +769,38 @@
         <div class="hero-card-icon">🏢</div>
         <div class="hero-card-text"><strong>BCR Punto País</strong></div>
       </div>
+      <div class="hero-card" onclick="document.getElementById('secAcelerador').scrollIntoView({behavior:'smooth'})">
+        <div class="hero-card-icon">🚀</div>
+        <div class="hero-card-text"><strong>Acelerador</strong></div>
+      </div>
     </div>
   </div>
   <div class="hero-strip">🛡️ Respaldado por ASSA Compañía de Seguros &nbsp;·&nbsp; El León Azulado</div>
 </div>
 
 <div class="main">
+
+  <!-- ===== ACELERADOR ===== -->
+  <div class="section-card" id="secAcelerador">
+    <div class="section-header acelerador-header" onclick="toggleSection('acelerador')">
+      <div class="section-header-accent"></div>
+      <div class="section-header-inner">
+        <div class="section-icon">🚀</div>
+        <div class="section-info">
+          <h2>Acelerador</h2>
+        </div>
+        <button class="section-toggle open" id="toggle-acelerador">▼</button>
+      </div>
+    </div>
+    <div class="section-body open" id="body-acelerador">
+      <div class="acelerador-grid" id="acelerador-grid">
+        <div class="acelerador-card" onclick="openLightbox('acelerador/assa-premia-octubre-2026.jpg')">
+          <img src="acelerador/assa-premia-octubre-2026.jpg" alt="ASSA Premia tu Esfuerzo – del 12 al 31 de octubre" loading="lazy">
+          <div class="acelerador-cap">ASSA Premia tu Esfuerzo · 12 al 31 de octubre</div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- ===== BCR PERSONAS ===== -->
   <div class="section-card" id="secPersonas">
@@ -2366,6 +2429,20 @@ function downloadContingencia(key) {
   setTimeout(() => URL.revokeObjectURL(url), 1000);
 }
 
+function openLightbox(src) {
+  const ov = document.getElementById('lightbox');
+  document.getElementById('lightbox-img').src = src;
+  ov.classList.add('open');
+}
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('open');
+}
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+
 </script>
+<div class="lightbox-overlay" id="lightbox" onclick="closeLightbox()">
+  <button class="lightbox-close" onclick="closeLightbox()" aria-label="Cerrar">✕</button>
+  <img id="lightbox-img" src="" alt="Plan del Acelerador" onclick="event.stopPropagation()">
+</div>
 </body>
 </html>
