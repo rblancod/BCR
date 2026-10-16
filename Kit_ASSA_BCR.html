@@ -63,7 +63,7 @@
   }
   .hero-top {
     background: linear-gradient(135deg, var(--bcr-blue-dark) 0%, #0066C8 50%, var(--bcr-blue) 100%);
-    padding: 48px 28px 36px;
+    padding: 30px 28px 6px;
     position: relative;
   }
   .hero-top::before {
@@ -740,6 +740,32 @@
     cursor: pointer; line-height: 1;
   }
   .lightbox-close:hover { background: rgba(255,255,255,0.3); }
+
+  /* ===== NAVEGACIÓN POR PESTAÑAS (botones zona azul) ===== */
+  .hero-card.active {
+    background: rgba(255,255,255,0.30);
+    border-color: #ffffff;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.28);
+    transform: translateY(-2px);
+  }
+  /* Los encabezados de sección ya no se usan: la navegación vive en la zona azul */
+  .section-header { display: none; }
+  /* Cada sección se muestra solo cuando está activa */
+  .section-card { display: none; }
+  .section-card.active-section { display: block; }
+  .section-card.active-section .section-body { display: block; padding-top: 26px; }
+
+  /* ===== RESPONSIVE (celular / tablet / PC) ===== */
+  @media (min-width: 601px) and (max-width: 900px) {
+    .hero-card { min-width: 0; flex: 1 1 42%; justify-content: center; }
+  }
+  @media (max-width: 600px) {
+    .hero-top { padding: 22px 12px 6px; }
+    .hero-cards { padding: 0 12px 18px; gap: 10px; }
+    .hero-card { min-width: 0; flex: 1 1 100%; justify-content: center; padding: 13px 14px; }
+    .section-card.active-section .section-body { padding-left: 14px; padding-right: 14px; padding-top: 20px; }
+    .acelerador-grid { grid-template-columns: 1fr; padding: 16px; }
+  }
 </style>
 </head>
 <body>
@@ -758,15 +784,15 @@
 <div class="hero">
   <div class="hero-top">
     <div class="hero-cards">
-      <div class="hero-card" onclick="toggleSection('personas'); document.getElementById('secPersonas').scrollIntoView({behavior:'smooth'})">
+      <div class="hero-card" id="herocard-personas" onclick="showSection('personas')">
         <div class="hero-card-icon">👤</div>
         <div class="hero-card-text"><strong>BCR Personas</strong></div>
       </div>
-      <div class="hero-card" onclick="toggleSection('puntopais'); document.getElementById('secPuntoPais').scrollIntoView({behavior:'smooth'})">
+      <div class="hero-card" id="herocard-puntopais" onclick="showSection('puntopais')">
         <div class="hero-card-icon">🏢</div>
         <div class="hero-card-text"><strong>BCR Punto País</strong></div>
       </div>
-      <div class="hero-card" onclick="document.getElementById('secAcelerador').scrollIntoView({behavior:'smooth'})">
+      <div class="hero-card" id="herocard-acelerador" onclick="showSection('acelerador')">
         <div class="hero-card-icon">🚀</div>
         <div class="hero-card-text"><strong>Acelerador</strong></div>
       </div>
@@ -2285,6 +2311,25 @@
 </div>
 
 <script>
+var SECTION_CARDS = { personas: 'secPersonas', puntopais: 'secPuntoPais', acelerador: 'secAcelerador' };
+function showSection(id) {
+  // activar solo la sección elegida
+  document.querySelectorAll('.section-card').forEach(c => c.classList.remove('active-section'));
+  document.querySelectorAll('.hero-card').forEach(c => c.classList.remove('active'));
+  var card = document.getElementById(SECTION_CARDS[id]);
+  if (card) card.classList.add('active-section');
+  var hc = document.getElementById('herocard-' + id);
+  if (hc) hc.classList.add('active');
+  // cerrar cualquier detalle de cobertura abierto al cambiar de sección
+  document.querySelectorAll('.detail-panel').forEach(p => p.classList.remove('open'));
+  document.querySelectorAll('.cobertura-btn').forEach(b => b.classList.remove('active'));
+  // en móvil, llevar la vista al contenido recién mostrado
+  if (window.innerWidth <= 600 && card) {
+    setTimeout(function(){ card.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 60);
+  }
+}
+document.addEventListener('DOMContentLoaded', function(){ showSection('personas'); });
+
 function toggleSection(id) {
   const body = document.getElementById('body-' + id);
   const toggle = document.getElementById('toggle-' + id);
