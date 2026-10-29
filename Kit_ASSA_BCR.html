@@ -750,42 +750,6 @@
   .lightbox-close:hover { background: rgba(255,255,255,0.3); }
 
 
-  /* ===== DASHBOARD / CALCULADORA ===== */
-  .dash-block { margin-bottom: 30px; }
-  .dash-title { font-size: 21px; font-weight: 800; color: var(--bcr-blue); margin-bottom: 4px; letter-spacing:-0.3px; }
-  .dash-title.red { color: var(--bcr-red); }
-  .dash-sub { font-size: 13px; color: var(--gray-600); margin-bottom: 14px; line-height: 1.55; }
-  .dash-office { display: flex; flex-wrap: wrap; gap: 10px 22px; align-items: center; background: var(--bcr-blue-light);
-    border: 1px solid var(--gray-200); border-radius: 12px; padding: 12px 16px; margin-bottom: 16px; font-size: 14px; }
-  .dash-office label { font-weight: 700; color: var(--gray-800); display:flex; align-items:center; gap:8px; }
-  .dash-office input { width: 96px; padding: 7px 8px; border: 2px solid #FF8A00; border-radius: 8px; font-size: 15px; font-weight: 800; text-align: center; font-family: var(--font); }
-  .dash-office .dash-of-val { color: var(--gray-600); font-weight:600; }
-  .dash-office .dash-of-val strong { color: var(--bcr-blue-dark); }
-  .dash-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; border-radius: 12px; border:1px solid var(--gray-200); }
-  table.calc-table, table.pyr-table { border-collapse: collapse; width: 100%; font-size: 15px; }
-  table.calc-table { min-width: 620px; }
-  table.pyr-table { min-width: 1020px; }
-  .calc-table th, .calc-table td, .pyr-table th, .pyr-table td { border: 1px solid var(--gray-200); padding: 9px 13px; text-align: center; white-space: nowrap; width: 1%; }
-  .calc-table thead th, .pyr-table thead th { background: var(--bcr-blue); color: #fff; font-weight: 700; text-align: center; font-size: 13.5px; }
-  .pyr-table thead th { position: sticky; top: 0; }
-  .calc-table td:first-child, .calc-table th:first-child, .pyr-table td:first-child, .pyr-table th:first-child { text-align: center; position: sticky; left: 0; }
-  .calc-table td:first-child, .pyr-table td:first-child { background: #fff; font-weight: 600; }
-  .calc-table thead th:first-child, .pyr-table thead th:first-child { left:0; z-index:2; }
-  .calc-table tbody tr:nth-child(even) td, .pyr-table tbody tr:nth-child(even) td { background: var(--gray-50); }
-  .calc-table tbody tr:nth-child(even) td:first-child, .pyr-table tbody tr:nth-child(even) td:first-child { background: var(--gray-50); }
-  .calc-input { width: 80px; padding: 7px 6px; border: 2px solid #FF8A00; border-radius: 7px; text-align: center; font-size: 16px; font-weight: 800; font-family: var(--font); background:#FFF8F0; }
-  .calc-input:focus { outline: none; border-color: var(--bcr-blue); box-shadow: 0 0 0 3px rgba(0,87,168,0.15); }
-  .calc-table tfoot td, .pyr-table tfoot td { background: var(--gray-800); color: #fff; font-weight: 800; }
-  .calc-table tfoot td:first-child, .pyr-table tfoot td:first-child { background: var(--gray-800); }
-  .pyr-tag { display:inline-block; font-size:10px; font-weight:800; padding:1px 7px; border-radius:20px; margin-left:6px; vertical-align:middle; }
-  .pyr-tag.rec { background:#E3F7E8; color:#1B7A33; }
-  .pyr-tag.unica { background:#E6F0FA; color:#0057A8; }
-  .dash-note { font-size: 12px; color: var(--gray-600); margin-top: 11px; line-height: 1.55; }
-  @media (max-width: 600px) {
-    .dash-title { font-size: 18px; }
-    .calc-table th, .calc-table td, .pyr-table th, .pyr-table td { padding: 7px 8px; }
-  }
-
   /* ===== NAVEGACIÓN POR PESTAÑAS (botones zona azul) ===== */
   .hero-card.active {
     background: rgba(255,255,255,0.30);
@@ -836,10 +800,6 @@
       <div class="hero-card" id="herocard-puntopais" onclick="showSection('puntopais')">
         <div class="hero-card-icon">🏢</div>
         <div class="hero-card-text"><strong>BCR Punto País</strong></div>
-      </div>
-      <div class="hero-card" id="herocard-dashboard" onclick="showSection('dashboard')">
-        <div class="hero-card-icon">🧮</div>
-        <div class="hero-card-text"><strong>Dashboard</strong></div>
       </div>
     </div>
   </div>
@@ -2352,46 +2312,6 @@
   </div>
 
 
-  <!-- ===== DASHBOARD (CALCULADORA) ===== -->
-  <div class="section-card" id="secDashboard">
-    <div class="section-body" id="body-dashboard">
-      <div class="dash-block">
-        <div class="dash-title">🧮 CALCULADORA DE COMISIONES</div>
-        <div class="dash-sub">Ingresá la cantidad de ventas por producto y el total se calcula automáticamente. 🟠 Celdas naranjas = ingresás vos · el resto se calcula solo.</div>
-        <div class="dash-office">
-          <label>U.E. <input id="calc-ue" type="number" value="297" min="0"></label>
-          <div class="dash-of-val">Oficina: <strong id="calc-oficina">—</strong></div>
-          <div class="dash-of-val">Gerente: <strong id="calc-gerente">—</strong></div>
-        </div>
-        <div class="dash-scroll">
-          <table class="calc-table">
-            <thead><tr><th>Producto</th><th>Prima Prom. (₡)</th><th>% Comisión</th><th>Ventas</th><th>Comisión del Mes (₡)</th><th>Proyección Anual (₡)</th></tr></thead>
-            <tbody id="calc-body"></tbody>
-            <tfoot><tr><td>TOTAL DEL MES</td><td></td><td></td><td id="calc-tv"></td><td id="calc-tm"></td><td id="calc-ta"></td></tr></tfoot>
-          </table>
-        </div>
-        <div class="dash-note">* La Proyección Anual aplica un descuento del 10% por cancelaciones en primas Recurrentes. Las primas Únicas (Pasaporte $, Muvit Doméstico) no acumulan mensualmente.</div>
-      </div>
-
-      <div class="dash-block">
-        <div class="dash-title red">📈 COMISIÓN PIRAMIDAL ACUMULADA</div>
-        <div class="dash-sub">🟢 <strong>Recurrente:</strong> la comisión crece cada mes (las pólizas anteriores siguen sumando). 🔵 <strong>Única:</strong> se cobra solo el mes que se vende. Las ventas se toman automáticamente de la calculadora de arriba.</div>
-        <div class="dash-scroll">
-          <table class="pyr-table">
-            <thead><tr><th>Producto</th><th>Mes 1</th><th>Mes 2</th><th>Mes 3</th><th>Mes 4</th><th>Mes 5</th><th>Mes 6</th><th>Mes 7</th><th>Mes 8</th><th>Mes 9</th><th>Mes 10</th><th>Mes 11</th><th>Mes 12</th><th>TOTAL ANUAL</th></tr></thead>
-            <tbody id="pyr-body"></tbody>
-            <tfoot><tr id="pyr-foot"><td>💰 TOTAL TODOS LOS PRODUCTOS</td></tr></tfoot>
-          </table>
-        </div>
-        <div class="dash-note">* Recurrente: Mes 1 = Ventas × Prima × %Comisión.  Mes N = Mes 1 × (1 + (N−1) × 94.4%).  Castigo del 5.6% de cancelación acumulado.  * Única (Pasaporte $, Muvit Doméstico, Muvit Travel): comisión fija por venta, no crece con el tiempo.</div>
-      </div>
-    </div>
-  </div>
-
-
-</div>
-
-
   <!-- ===== BOLETÍN (siempre visible, luego de los seguros) ===== -->
   <div class="boletin-section" id="secBoletin">
     <div class="boletin-head">
@@ -2417,7 +2337,7 @@
 </div>
 
 <script>
-var SECTION_CARDS = { personas: 'secPersonas', puntopais: 'secPuntoPais', dashboard: 'secDashboard' };
+var SECTION_CARDS = { personas: 'secPersonas', puntopais: 'secPuntoPais' };
 function showSection(id) {
   // activar solo la sección elegida
   document.querySelectorAll('.section-card').forEach(c => c.classList.remove('active-section'));
@@ -2587,103 +2507,6 @@ function closeLightbox() {
 }
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
 
-
-/* ===== DASHBOARD: Calculadora de comisiones + Pirámide ===== */
-var SUCURSALES = {"201": ["Caja Auxiliar ESPH", "Ricardo Arias Chacón"], "205": ["Alajuela", "Eunice Boniche Peraza"], "206": ["Plaza Real", "Alexis Aguilar Molina"], "210": ["Cañas", "Lucrecia Vargas Soto"], "211": ["Upala", "Wendy Solís Ramírez"], "215": ["Ciudad Quesada", "Fabian Zamora Ruiz"], "216": ["Oxigeno", "Carlos Noguera Rodríguez"], "220": ["Heredia", "Ricardo Arias Chacón"], "223": ["San Isidro de Heredia", "Marco Salas Zumbado"], "224": ["Caja Auxiliar Municipalidad Heredia", "Ricardo Arias Chacón"], "225": ["Centro de Negocios Liberia", "Belkis Sanchez Torrentes"], "226": ["Playas del Coco", "Natalia Valdelomar Dávila"], "229": ["La Cruz", "Donald Cruz Gutiérrez"], "230": ["Limón", "Carlos Salazar Álvarez"], "232": ["Cahuita", "Eduardo Montero Rojas"], "234": ["Venecia de Carrandí", "José Luis Sobalbarro Cerdas"], "235": ["Nicoya", "Arelys Obando Villalobos"], "236": ["Playa Sámara", "Eithel Cordero Chavarría"], "238": ["Pacayas", "Fabian Rivera Aguilar"], "239": ["Playa Nosara", "Hayleen Aguirre Mora"], "240": ["Puntarenas", "Edgar Arias Obando"], "245": ["San Isidro del General", "Marco Vargas Jiménez"], "250": ["Grecia", "Carlos Gómez Torrens"], "255": ["San Ramón", "Omar Morales Matamoros"], "260": ["Turrialba", "Viviana Rojas Artiaga"], "265": ["Ciudad Neilly", "Jose López Carranza"], "267": ["Puerto Jiménez", "Michael Castro Castro"], "270": ["Puriscal", "Rodrigo Valverde Rojas"], "275": ["Cartago", "Geiner Salas Piedra"], "280": ["Quepos", "Mariela Gamboa Calderón"], "285": ["Guápiles", "Guido Sandoval Vargas"], "286": ["Río Frío de Sarapiquí", "Dagoberto Sánchez Medina"], "290": ["San Vito de Coto Brus", "Iván Campos Umaña"], "292": ["Sabalito", "Rodrigo Rodríguez Salazar"], "295": ["Naranjo", "Luis Elías Vega Badilla"], "297": ["Palmares", "María González Jiménez"], "302": ["Atenas", "Stephanie María Calderón Jiménez"], "303": ["Orotina", "Maikel Ramírez Villafuerte"], "304": ["El Roble", "Edwin Castro Guido"], "305": ["Esparza", "Juan Ordeñana Vargas"], "307": ["Barrio San José de Alajuela", "Daniel Alexander Sancho Rodríguez"], "309": ["Monteverde", "Adalberto Santamaría Porras"], "310": ["Caja Auxiliar Migración", "Ingrid Calvo Jiménez"], "314": ["Caja Auxiliar La Yema Dorada", "Eilyn Muñoz Esquivel"], "317": ["Caja Auxiliar Invu", "Johanna Arias Salazar"], "321": ["Tilarán", "Patricia Hernández Martínez"], "322": ["Guayabo", "Max Valenciano González"], "323": ["Bagaces", "Evelyn Chacón Delgado"], "325": ["Flamingo", "Xinia Moraga Vásquez"], "326": ["Santa Cruz", "Cristina Duarte Castro"], "327": ["Filadelfia", "Ivannia Obando Angulo"], "330": ["Paraíso de Cartago", "Rolando Quesada Sandoval"], "331": ["TerraMall", "Carlos Barker Solano"], "332": ["San Marcos de Tarrazú", "Evelyn Leiva Ureña"], "334": ["Florencia (Ciudad Quesada)", "María Quesada Zamora"], "341": ["Aguas Zarcas", "Maykol Alcázar Mesén"], "342": ["Santa Rosa de Pocosol", "Elmer Salas Sandoval"], "343": ["Monterrey", "Sandra Pinell González"], "345": ["Pital", "Yajaira Rodríguez Araya"], "346": ["La Fortuna", "Sandra Pinell González"], "347": ["Río Cuarto", "Huberth Vargas Mora"], "349": ["Tres Ríos", "Javier Méndez Chacón"], "353": ["Caja Auxiliar Peñas Blancas", "Brenda Fajardo Fajardo"], "355": ["Clínica Bíblica", "Diego Caballero Campos"], "358": ["C.C. Plaza Rohrmoser", "Iván Oviedo Castro"], "359": ["Mall Paseo de las Flores", "Melany Campos Esquivel"], "362": ["San Antonio de Belén", "Luis Víquez Mejía"], "363": ["Santa Bárbara", "Esteban Arguedas Fernández"], "364": ["Santo Domingo", "Mario Víquez Alfaro"], "365": ["Barva de Heredia", "Randall Oporta Pérez"], "366": ["San Rafael de Heredia", "Jorge Ortiz Alpízar"], "368": ["Paseo Metrópoli", "Cristian Guillén Brenes"], "370": ["San Rafael de Oreamuno", "Carlos Salas Sanabria"], "371": ["Tejar del Guarco", "Herman Mora Foncerrada"], "373": ["San Joaquín de Flores", "Leiner Céspedes Víquez"], "377": ["Centro de Utilidad Oficina Central", "Johanna Arias Salazar"], "398": ["Tamarindo", "Edgar Cárdenas Ruíz"], "399": ["Puerto Viejo de Talamanca", "Diego Varela Jiménez"], "401": ["Bataán de Matina", "Yeimer Chaves Morales"], "460": ["Buenos Aires", "María Teresa Solís Varela"], "463": ["Palmar Norte", "Laura Vanessa Solano Araya"], "479": ["Sarchí", "Noemy Alpízar Rojas"], "480": ["San Pedro de Poas", "Juan Phillips Murillo"], "486": ["UCR", "Gilberth Miranda Bonilla"], "491": ["Municipalidad San José", "Jorge Esquivel Monge"], "541": ["Golfito", "Alvaro Toruño Portuguéz"], "542": ["Paso Canoas", "Fernando Pérez Novoa"], "552": ["Junta Protección Social", "Luis Jiménez Bermúdez"], "600": ["Parrita", "Dinia Fallas Mora"], "602": ["Caja Auxiliar Dos Pinos Coyol", "Rafael Soto González"], "607": ["Caja Auxiliar Municipalidad Limón", "Carlos Salazar Álvarez"], "612": ["Caja Auxiliar Municipalidad de Pococí", "Karen Dayana Calderón Marchena"], "616": ["Agencia Bancaria INS", "Fernando Salazar Salazar"], "617": ["Caja Auxiliar Dos Pinos La Lima", "Geiner Salas Piedra"], "619": ["Caja Auxiliar Subasta Ganadera Guápiles", "Antony Sleiter Guido Madrigal"], "620": ["Cariari", "Florentino Herrera Vargas"], "622": ["Siquirres", "Ronny Alfaro Mora"], "623": ["Puerto Viejo Sarapiquí", "Tito Rodríguez Hidalgo"], "629": ["Guácimo", "Marco Vinicio Alfaro Barboza"], "660": ["Zarcero", "Ronny Barquero Vargas"], "826": ["Caja Auxiliar Pinturas Sur", "Nury Zúñiga Vargas"], "827": ["Caja Auxiliar Municipalidad de Liberia", "María José Araya Ruiz"], "828": ["Caja Auxiliar Junta de Protección Cartago", "Geiner Salas Piedra"], "829": ["Caja Auxiliar Municipalidad de Tibás", "Nury Zúñiga Vargas"], "830": ["Punto País Plaza Mayor", "Eilyn Muñoz Esquivel"], "832": ["Caja Auxiliar Municipalidad de Desamp.", "N/A"], "833": ["Caja Auxiliar Correos de Costa Rica", "N/A"], "838": ["Caja Auxiliar Subasta Gasol del Atlántico", "Antony Sleiter Guido Madrigal"], "848": ["Caja Auxiliar El Arreo", "Luis Víquez Mejía"], "851": ["Caja Auxiliar INTECA", "Herman Mora Foncerrada"], "853": ["Caja Auxiliar Municipalidad de Acosta", "N/A"], "854": ["Caja Auxiliar El Lagar Desamparados", "N/A"], "903": ["Multicentro Desamparados", "Claudio Arias Ramirez"], "905": ["Paseo Estudiantes", "Ricardo Guzmán Saravia"], "907": ["Desamparados", "Roger Batista"], "908": ["Aserrí", "Pablo Arroyo Torres"], "909": ["Guadalupe", "Johnny Portuguéz Zúñiga"], "914": ["Centro de Negocios Curridabat", "Angelica Sánchez González"], "917": ["González Lahmann", "Ricardo Guzmán Saravia"], "919": ["Santa Ana", "Gabriel Mora Mohs"], "920": ["Ciudad Colón", "Nelson Pérez Aguirre"], "921": ["San Rafael Escazú", "Carlos Soto Carvajal"], "925": ["I.C.E.", "Vivian Cordoba Corrales"], "926": ["Plaza Mayor", "Eilyn Muñoz Esquivel"], "927": ["Centro Comercial del Sur", "Ronny Céspedes Montoya"], "931": ["San Pedro", "Ana María Hernández López"], "932": ["Sabanilla", "Erick Castro Barquero"], "933": ["Registro Nacional", "Michael Monge López"], "935": ["Tibás", "Nury Zúñiga Vargas"], "942": ["San Sebastián", "Daniel Alvarado Rojas"], "945": ["Moravia", "Adriana Zúñiga Méndez"], "946": ["Plaza Lincoln", "Bernardo Rojas Núñez"], "947": ["Paseo Colón", "Ingrid Calvo Jiménez"], "949": ["Centro de Negocios Barreal", "Andrés Montero Guevara"], "950": ["Coronado", "Marcela Segura Ballar"], "953": ["Jacó", "Kadis Carvajal Pérez"], "955": ["San Antonio Coronado", "Adriana Espinoza Anchia"], "956": ["Novacentro", "Andrea Artavia Porras"], "958": ["Multiplaza Oeste", "Frank Fernandez Garro"], "962": ["San Francisco de Dos Ríos", "Gilbert Vinicio Ureña Vargas"], "964": ["Plaza América", "Marianella Páez Quesada"], "967": ["Multiplaza del Este", "Sara Araya Araya"], "984": ["Uvita", "Esteban Fonseca Agüero"], "500": ["Oficina Central B", "Johan Andrey Mena Vargas"]};
-var DASH_PRODUCTS = [
-  { label: '💳 FRE',              prima: 5041, com: 0.095,  ventas: 4,  annual: 'rec',   pyr: 'rec'   },
-  { label: '🌐 Pasaporte $',      prima: 5448, com: 0.0625, ventas: 20, annual: 'unica', pyr: 'unica' },
-  { label: '🌐 Muvit Doméstico',  prima: 9500, com: 0.15,   ventas: 2,  annual: 'unica', pyr: 'unica' },
-  { label: '🚗 Muvit Travel',     prima: 9500, com: 0.15,   ventas: 2,  annual: 'rec',   pyr: 'unica' },
-  { label: '🛍️ Bolso',            prima: 4124, com: 0.143,  ventas: 15, annual: 'rec',   pyr: 'rec'   },
-  { label: '🚗 Licencias',        prima: 2907, com: 0.065,  ventas: 5,  annual: 'rec',   pyr: 'rec'   },
-  { label: '🛡️ AP + Desempleo',   prima: 3620, com: 0.1,    ventas: 9,  annual: 'rec',   pyr: 'rec'   }
-];
-var GROWTH = 0.944; // 1 - 5.6% cancelación
-function fmtCRC(n){ return '₡' + Math.round(n).toLocaleString('es-CR'); }
-function fmtPct(n){ return (n*100).toLocaleString('es-CR',{maximumFractionDigits:2}) + '%'; }
-
-function buildDashboard(){
-  var tb = document.getElementById('calc-body');
-  if(!tb) return;
-  tb.innerHTML = '';
-  DASH_PRODUCTS.forEach(function(p, i){
-    var tr = document.createElement('tr');
-    tr.innerHTML = '<td>'+p.label+'</td>'
-      + '<td>'+p.prima.toLocaleString('es-CR')+'</td>'
-      + '<td>'+fmtPct(p.com)+'</td>'
-      + '<td><input class="calc-input" type="number" min="0" data-i="'+i+'" value="'+p.ventas+'"></td>'
-      + '<td id="calc-m-'+i+'"></td>'
-      + '<td id="calc-a-'+i+'"></td>';
-    tb.appendChild(tr);
-  });
-  tb.querySelectorAll('.calc-input').forEach(function(inp){
-    inp.addEventListener('input', function(){
-      var i = +inp.getAttribute('data-i');
-      DASH_PRODUCTS[i].ventas = Math.max(0, +inp.value || 0);
-      recalcDashboard();
-    });
-  });
-  // pyramidal rows
-  var pb = document.getElementById('pyr-body');
-  pb.innerHTML = '';
-  DASH_PRODUCTS.forEach(function(p, i){
-    var tag = p.pyr==='rec' ? '<span class="pyr-tag rec">REC</span>' : '<span class="pyr-tag unica">ÚNICA</span>';
-    var cells = '<td>'+p.label+tag+'</td>';
-    for(var m=1;m<=12;m++){ cells += '<td id="pyr-'+i+'-'+m+'"></td>'; }
-    cells += '<td id="pyr-t-'+i+'"></td>';
-    var tr = document.createElement('tr'); tr.innerHTML = cells; pb.appendChild(tr);
-  });
-  var foot = document.getElementById('pyr-foot');
-  var fc = '<td>💰 TOTAL TODOS LOS PRODUCTOS</td>';
-  for(var m=1;m<=12;m++){ fc += '<td id="pyr-tot-'+m+'"></td>'; }
-  fc += '<td id="pyr-tot-anual"></td>';
-  foot.innerHTML = fc;
-  lookupOffice();
-  recalcDashboard();
-}
-
-function lookupOffice(){
-  var ueEl = document.getElementById('calc-ue');
-  var ue = ueEl ? (ueEl.value||'').trim() : '';
-  var rec = SUCURSALES[ue];
-  document.getElementById('calc-oficina').textContent = rec ? rec[0] : '—';
-  document.getElementById('calc-gerente').textContent = rec ? rec[1] : '—';
-}
-
-function recalcDashboard(){
-  var tv=0, tm=0, ta=0;
-  var monthTot = [0,0,0,0,0,0,0,0,0,0,0,0];
-  var grandAnual = 0;
-  DASH_PRODUCTS.forEach(function(p, i){
-    var mes = p.ventas * p.prima * p.com;
-    var anual = (p.annual==='rec') ? mes*12*0.9 : mes;
-    tv += p.ventas; tm += mes; ta += anual;
-    var em = document.getElementById('calc-m-'+i); if(em) em.textContent = fmtCRC(mes);
-    var ea = document.getElementById('calc-a-'+i); if(ea) ea.textContent = fmtCRC(anual);
-    // pyramidal
-    var base = p.ventas * p.prima * p.com;
-    var rowTot = 0;
-    for(var m=1;m<=12;m++){
-      var val = (p.pyr==='rec') ? Math.round(base*(1+(m-1)*GROWTH)) : Math.round(base);
-      rowTot += val; monthTot[m-1] += val;
-      var cell = document.getElementById('pyr-'+i+'-'+m); if(cell) cell.textContent = fmtCRC(val);
-    }
-    grandAnual += rowTot;
-    var rt = document.getElementById('pyr-t-'+i); if(rt) rt.textContent = fmtCRC(rowTot);
-  });
-  document.getElementById('calc-tv').textContent = tv.toLocaleString('es-CR');
-  document.getElementById('calc-tm').textContent = fmtCRC(tm);
-  document.getElementById('calc-ta').textContent = fmtCRC(ta);
-  for(var m=1;m<=12;m++){ var c=document.getElementById('pyr-tot-'+m); if(c) c.textContent = fmtCRC(monthTot[m-1]); }
-  var ga = document.getElementById('pyr-tot-anual'); if(ga) ga.textContent = fmtCRC(grandAnual);
-}
-
-document.addEventListener('DOMContentLoaded', function(){
-  buildDashboard();
-  var ue = document.getElementById('calc-ue');
-  if(ue) ue.addEventListener('input', lookupOffice);
-});
 
 </script>
 <div class="lightbox-overlay" id="lightbox" onclick="closeLightbox()">
