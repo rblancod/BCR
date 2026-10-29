@@ -921,6 +921,10 @@
             <span class="view-btn-icon">🎯</span>
             <span class="view-btn-label">Cierre Efectivo</span>
           </button>
+          <button class="view-btn" onclick="openView('seguridad-plus','reclamo',this)">
+            <span class="view-btn-icon">📝</span>
+            <span class="view-btn-label">Reclamo de Póliza</span>
+          </button>
         </div>
         <div id="view-seguridad-plus-cubre" class="view-content active"><div class="content-section">
             <div class="content-label">Coberturas principales</div>
@@ -1035,7 +1039,32 @@
           <div class="objecion-item"><div class="objecion-q" onclick="toggleObj(this)"><span class="objecion-q-icon">💬</span>No necesito las asistencias<span class="objecion-arrow">▼</span></div><div class="objecion-a">Las asistencias son un beneficio adicional, no el producto principal. El seguro protege su dinero. Las asistencias son un plus que puede usar cuando menos lo espere, sin costo adicional.</div></div>
           <div class="objecion-item"><div class="objecion-q" onclick="toggleObj(this)"><span class="objecion-q-icon">💬</span>¿Cómo cancelo si no lo quiero?<span class="objecion-arrow">▼</span></div><div class="objecion-a">La cancelación es sencilla, puede hacerla cuando lo desee. No tiene permanencia mínima. El cobro es mensual y se realiza automáticamente a su tarjeta.</div></div>
           </div></div>
-        
+        <div id="view-seguridad-plus-reclamo" class="view-content">
+          <div class="content-section">
+            <div class="content-label">📋 Procedimiento para presentar un reclamo por fraude</div>
+            <div class="highlight-box"><strong>1. Reporte del fraude</strong><br>El asegurado debe comunicarse con el Servicio de Atención al Cliente (SAC), al teléfono <strong>2503-2710</strong>, para reportar el fraude.</div>
+          </div>
+          <div class="content-section">
+            <div class="content-label">2. Documentación requerida</div>
+            <ul class="check-list">
+              <li>Estado de cuenta.</li>
+              <li>Detalle de las transacciones no reconocidas.</li>
+              <li>Copia de la cédula de identidad por ambos lados.</li>
+              <li>Carta firmada con la declaración de los hechos por parte del cliente.</li>
+              <li>Denuncia presentada ante el Organismo de Investigación Judicial (OIJ).</li>
+              <li><strong>Fraude en el extranjero:</strong> si las transacciones se realizaron en el extranjero y el cliente no ha salido del país, debe adjuntar fotografías de su pasaporte que permitan evidenciarlo.</li>
+            </ul>
+          </div>
+          <div class="content-section">
+            <div class="content-label">3. Envío de la documentación</div>
+            <div class="highlight-box green">La documentación requerida, junto con el formulario correspondiente, debe enviarse al siguiente correo electrónico:<br><strong><a href="mailto:BCRSegurosAutoexpedibles@bancobcr.com">BCRSegurosAutoexpedibles@bancobcr.com</a></strong></div>
+          </div>
+          <div class="note-box">⚠️ <strong>Importante:</strong> Verificar que se adjunte toda la documentación solicitada y el formulario correspondiente para gestionar el reclamo.</div>
+          <div class="content-section">
+            <div class="content-label">Otros reclamos o consultas</div>
+            <div class="highlight-box">Para cualquier otro tipo de reclamo, el cliente debe comunicarse con el Servicio de Atención al Cliente (SAC) al teléfono <strong>2503-2710</strong>.</div>
+          </div></div>
+
         <div class="zona-asesor-wrap">
           <button class="zona-asesor-toggle" id="asesor-toggle-seguridad-plus" onclick="toggleZonaAsesor('seguridad-plus')">
             <div class="zona-asesor-left">
