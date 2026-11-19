@@ -860,6 +860,11 @@
           <div class="cob-name">Travesía Resguardada - Muvit</div>
           <span class="cob-tag tag-personas">Viaje · Internacional</span>
         </button>
+        <button class="cobertura-btn" onclick="openCobertura('muvit-domestico', this)">
+          <div class="cob-icon">🧳</div>
+          <div class="cob-name">Muvit Travel - Viajero Doméstico</div>
+          <span class="cob-tag tag-personas">Viaje · Doméstico</span>
+        </button>
       </div>
 
       <!-- DETAIL PANELS PERSONAS -->
@@ -1466,6 +1471,136 @@
         </div>
       </div>
 
+      <!-- MUVIT TRAVEL - VIAJERO DOMÉSTICO (Personas) -->
+      <div class="detail-panel" id="panel-muvit-domestico">
+        <div class="detail-header">
+          <div><h3>🧳 Muvit Travel - Viajero Doméstico</h3><p>Seguro Colectivo de Viaje – Muvit · Plan Viajero Doméstico</p></div>
+          <button class="detail-close" onclick="closePanel('muvit-domestico')">✕</button>
+        </div>
+        <div class="view-tabs">
+          <button class="view-btn active" onclick="openView('muvit-domestico','cubre',this)"><span class="view-btn-icon">✅</span><span class="view-btn-label">Qué Cubre</span></button>
+          <button class="view-btn" onclick="openView('muvit-domestico','planes',this)"><span class="view-btn-icon">💰</span><span class="view-btn-label">Planes</span></button>
+          <button class="view-btn" onclick="openView('muvit-domestico','activacion',this)"><span class="view-btn-icon">🚀</span><span class="view-btn-label">Gestionar Activación</span></button>
+          <button class="view-btn" onclick="openView('muvit-domestico','cierre',this)"><span class="view-btn-icon">🎯</span><span class="view-btn-label">Cierre Efectivo</span></button>
+        </div>
+        <div id="view-muvit-domestico-cubre" class="view-content active">
+          <div class="content-section">
+            <div class="content-label">Condiciones de cobertura</div>
+            <ul class="check-list">
+              <li>El viaje debe tener una duración máxima de 15 días.</li>
+              <li>Debe realizarse dentro del período de vigencia del seguro individual.</li>
+            </ul>
+          </div>
+          <div class="content-section">
+            <div class="content-label">Coberturas incluidas</div>
+            <ul class="check-list">
+              <li><strong>Muerte accidental durante el viaje:</strong> suma asegurada a los beneficiarios si el fallecimiento es consecuencia directa de un accidente ocurrido durante el viaje.</li>
+              <li><strong>Desmembramiento:</strong> indemnización según la tabla (% de la suma asegurada) por pérdida de miembros u órganos por accidente.</li>
+              <li><strong>Beneficios médicos y dentales:</strong> gastos médicos por accidente o enfermedad (honorarios, internación, anestesia, exámenes, enfermería hasta 3 turnos/día por 30 días, ambulancia hasta 25%), atención odontológica de emergencia, traslado médico de emergencia, medicamentos, repatriación de restos, hotel por convalecencia (incluye COVID-19), tiquete y hotel para familiares y traslado de menores de 15 años.</li>
+              <li><strong>Cancelaciones y cambios de viaje:</strong> demora de viaje (12 h o más), cancelación anticipada (al menos 8 días antes) e interrupción de viaje ya iniciado.</li>
+              <li><strong>Equipaje:</strong> pérdida de equipaje y demora de equipaje (más de 24 h).</li>
+              <li><strong>Asistencia teledoctor:</strong> médico general por videollamada o chat durante el viaje.</li>
+            </ul>
+          </div>
+          <div class="content-section"><div class="content-label">📞 Contacto y reclamación</div><div class="highlight-box">Para reportar un evento o consultar el estado de un reclamo:<br><strong>Teléfono: (+506) 4404-4293</strong><br><strong>WhatsApp: +54 (911) 2472-6164</strong></div></div>
+          <div class="content-section"><div class="content-label">📞 Contacto</div><div class="highlight-box"><strong>Servicio al Cliente:</strong> 2503-2710<br><strong>Coordinación Asistencias:</strong> 2503-2710 opción 2<br><strong>Reclamos aseguradora o Pago de siniestros:</strong> BCRSegurosAutoexpedibles@bancobcr.com</div></div>
+        </div>
+        <div id="view-muvit-domestico-planes" class="view-content">
+          <div class="highlight-box green" style="margin-bottom:14px"><strong>Plan Viajero Doméstico · Sin restricción de edad · Prima anual: $14.69</strong></div>
+          <div style="overflow-x:auto">
+            <table class="plans-table">
+              <tr><th>Beneficios Médicos y Dentales</th><th>Máximo de Cobertura</th></tr>
+              <tr><td>Emergencia Médica</td><td>US$ 10,000</td></tr>
+              <tr><td>Transferencia Médica</td><td>US$ 5,000</td></tr>
+              <tr><td>Repatriación de Restos / Sanitaria</td><td>US$ 5,000</td></tr>
+              <tr><td>Gastos Dentales</td><td>US$ 500</td></tr>
+              <tr><td>Medicamentos</td><td>US$ 500</td></tr>
+              <tr><td>Boleto Aéreo para Familiar (por emergencia)</td><td>Hasta US$ 750</td></tr>
+              <tr><td>Gastos de Hotel para Familiar (por hospitalización)</td><td>US$ 750 (US$ 75 por día)</td></tr>
+              <tr><td>Gastos de Hotel por recuperación</td><td>US$ 750 (US$ 75 por día)</td></tr>
+              <tr><td>Boleto Aéreo para Menor (por emergencia)</td><td>Hasta US$ 750</td></tr>
+              <tr><th>Beneficios de Cancelaciones y Cambios</th><th>Máximo de Cobertura</th></tr>
+              <tr><td>Demora de Viaje</td><td>US$ 100</td></tr>
+              <tr><td>Cancelación de Viaje</td><td>Hasta US$ 350</td></tr>
+              <tr><td>Interrupción de Viaje</td><td>US$ 150</td></tr>
+              <tr><th>Beneficios de Equipaje</th><th>Máximo de Cobertura</th></tr>
+              <tr><td>Pérdida de Equipaje</td><td>US$ 400</td></tr>
+              <tr><td>Demora de Equipaje</td><td>US$ 100</td></tr>
+              <tr><th>Beneficios de Accidentes Personales</th><th>Máximo de Cobertura</th></tr>
+              <tr><td>Muerte Accidental</td><td>US$ 10,000</td></tr>
+              <tr><td>Desmembramiento</td><td>US$ 10,000</td></tr>
+              <tr class="section-row"><td><strong>Prima Anual</strong></td><td><strong>$14.69</strong></td></tr>
+            </table>
+          </div>
+          <div class="content-section" style="margin-top:16px">
+            <div class="content-label">Tabla de desmembramiento (% de la suma asegurada)</div>
+            <div style="overflow-x:auto">
+              <table class="plans-table">
+                <tr><th>Pérdida de órganos o miembros</th><th>% de la suma asegurada</th></tr>
+                <tr><td>Ambas manos</td><td>100%</td></tr><tr><td>Ambos pies</td><td>100%</td></tr><tr><td>Ambos ojos</td><td>100%</td></tr><tr><td>Una mano y la visión de un ojo / un pie y la visión de un ojo</td><td>100%</td></tr><tr><td>Una mano y un pie</td><td>100%</td></tr><tr><td>Una mano o un pie</td><td>50%</td></tr><tr><td>Visión de un ojo</td><td>30%</td></tr><tr><td>Dedo pulgar de cualquier mano</td><td>15%</td></tr><tr><td>Dedo índice de cualquier mano</td><td>10%</td></tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div id="view-muvit-domestico-activacion" class="view-content">
+          <div class="activation-grid">
+            <div class="activation-card">
+              <div class="activation-icon">📋</div>
+              <div class="activation-title">Plataforma S2+</div>
+              <div class="activation-desc">Ingresa la venta del cliente directamente en la plataforma S2+ para emisión y cobro inmediato.</div>
+              <a class="activation-btn" href="https://s2plus.online/private" target="_blank">🚀 Ingresar Venta</a>
+            </div>
+          </div>
+        </div>
+        <div id="view-muvit-domestico-cierre" class="view-content">
+          <div class="cierre-section">
+            <div class="cierre-section-header"><span class="cierre-section-icon">🎙️</span><span class="cierre-section-title">Guion de Venta</span></div>
+            <div class="guion-step"><div class="guion-num">1</div><div class="guion-label">Apertura</div><div class="guion-text">"¿Tiene pensado viajar próximamente? Con un solo pago al año puede protegerse en todos sus viajes de hasta 15 días."</div></div>
+            <div class="guion-step"><div class="guion-num">2</div><div class="guion-label">Beneficios</div><div class="guion-text">"Muvit Travel cubre emergencias médicas hasta US$10,000, equipaje, cancelaciones, asistencia de un médico por videollamada y mucho más."</div></div>
+            <div class="guion-step"><div class="guion-num">3</div><div class="guion-label">Cierre</div><div class="guion-text">"Todo esto por apenas <em>$14.69 al año</em>, sin restricción de edad. ¿Lo activamos hoy mismo?"</div></div>
+          </div>
+          <div class="cierre-section">
+            <div class="cierre-section-header"><span class="cierre-section-icon">💬</span><span class="cierre-section-title">Manejo de Objeciones</span></div>
+            <div class="objecion-item"><div class="objecion-q" onclick="toggleObj(this)"><span class="objecion-q-icon">💬</span>Solo viajo una vez al año<span class="objecion-arrow">▼</span></div><div class="objecion-a">Justamente por eso conviene: por un único pago anual de $14.69 queda cubierto en ese viaje y en cualquier otro de hasta 15 días durante el año.</div></div>
+            <div class="objecion-item"><div class="objecion-q" onclick="toggleObj(this)"><span class="objecion-q-icon">💬</span>Mi tarjeta ya trae seguro de viaje<span class="objecion-arrow">▼</span></div><div class="objecion-a">Las coberturas de tarjeta suelen ser limitadas. Este plan ofrece hasta US$10,000 en emergencia médica, equipaje, cancelaciones y asistencia teledoctor, a un costo muy bajo.</div></div>
+          </div>
+        </div>
+        <div class="zona-asesor-wrap">
+          <button class="zona-asesor-toggle" id="asesor-toggle-muvit-domestico" onclick="toggleZonaAsesor('muvit-domestico')">
+            <div class="zona-asesor-left"><span class="zona-asesor-icon">🎓</span><div class="zona-asesor-text"><span class="zona-asesor-title">ZONA ASESOR</span><span class="zona-asesor-sub">Formación interna: aprende el producto y cómo venderlo</span></div></div>
+            <span class="zona-asesor-arrow">▼</span>
+          </button>
+          <div class="zona-asesor-content" id="asesor-content-muvit-domestico">
+            <div class="asesor-tabs">
+              <button class="asesor-tab active" onclick="openAsesorTab('muvit-domestico','por-que',this)">💡 Por qué Promoverlo</button><button class="asesor-tab" onclick="openAsesorTab('muvit-domestico','perfiles',this)">👤 Perfiles</button><button class="asesor-tab" onclick="openAsesorTab('muvit-domestico','exclusiones',this)">🚫 Exclusiones</button>
+            </div>
+            <div id="asesor-muvit-domestico-por-que" class="asesor-content active"><div class="content-section">
+              <div class="content-label">🎯 Por qué es fundamental hablarlo</div>
+              <div class="highlight-box">Un seguro de viaje anual, accesible y sin restricción de edad: ideal para ofrecer a cualquier cliente que viaje, aunque sea una vez al año.</div>
+              <ul class="check-list">
+                <li>Cobertura médica robusta en viaje (hasta US$10,000) a un precio muy bajo.</li>
+                <li>Incluye equipaje, cancelaciones, repatriación y asistencia teledoctor.</li>
+                <li>Un solo pago anual de $14.69 cubre viajes de hasta 15 días.</li>
+                <li>Sin restricción de edad: aplica a toda la familia.</li>
+              </ul>
+            </div></div><div id="asesor-muvit-domestico-perfiles" class="asesor-content"><div class="profiles-grid">
+              <div class="profile-card"><div class="profile-icon">✈️</div><div class="profile-name">Viajero frecuente</div><div class="profile-desc">Viaja varias veces al año y necesita respaldo médico y de equipaje.</div></div>
+              <div class="profile-card"><div class="profile-icon">👨‍👩‍👧</div><div class="profile-name">Familias</div><div class="profile-desc">Viajan juntos; sin restricción de edad aplica a todos.</div></div>
+              <div class="profile-card"><div class="profile-icon">🧳</div><div class="profile-name">Viajero ocasional</div><div class="profile-desc">Un pago anual lo cubre en ese viaje y en cualquier otro del año.</div></div>
+              <div class="profile-card"><div class="profile-icon">👴</div><div class="profile-name">Adulto mayor</div><div class="profile-desc">Sin restricción de edad, con cobertura médica en viaje.</div></div>
+            </div></div><div id="asesor-muvit-domestico-exclusiones" class="asesor-content"><ul class="excl-list">
+              <li>Aviación privada como tripulante, piloto, mecánico o pasajero en taxis aéreos o aeronaves no comerciales.</li>
+              <li>Pruebas o contiendas de velocidad, resistencia o seguridad en vehículos de cualquier tipo.</li>
+              <li>Piloto, mecánico en vuelo o tripulación de cualquier aeronave (comercial y privado).</li>
+              <li>Conductor o pasajero de motocicletas cuando no sea su medio de transporte habitual, y/o vehículos de motor acuáticos o terrestres similares.</li>
+              <li>Paracaidismo, buceo, alpinismo, charrería, esquí, tauromaquia, espeleología, motonáutica y deportes aéreos; práctica profesional de cualquier deporte.</li>
+              <li>Cuando el pago, beneficio o reclamación constituya una infracción de las resoluciones de las Naciones Unidas.</li>
+              <li>Enfermedad contagiosa, virus, epidemia o pandemia declarada por la OMS o la autoridad competente, a excepción de COVID-19.</li>
+            </ul></div>
+          </div>
+        </div>
+      </div>
+
       <!-- TRAVESÍA RESGUARDADA - MUVIT (también en Personas) -->
       <div class="detail-panel" id="panel-travesia-resguardada-p">
         <div class="detail-header red">
@@ -2061,6 +2196,11 @@
           <div class="cob-name">Seguro Pasaporte Dólares</div>
           <span class="cob-tag tag-puntopais">Viaje · Dólares</span>
         </button>
+        <button class="cobertura-btn puntopais" onclick="openCoberturaRed('muvit-domestico-pp', this)">
+          <div class="cob-icon">🧳</div>
+          <div class="cob-name">Muvit Travel - Viajero Doméstico</div>
+          <span class="cob-tag tag-puntopais">Viaje · Doméstico</span>
+        </button>
       </div>
 
       <!-- SEGURO EN CARRETERA + OTROS BANCO -->
@@ -2371,6 +2511,136 @@
             <li>Cirugías estéticas, condiciones preexistentes, embarazo, SIDA/VIH.</li>
             <li>Pérdida de animales, vehículos, electrónicos, dinero, documentos o artículos perecederos (en equipaje).</li>
           </ul></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MUVIT TRAVEL - VIAJERO DOMÉSTICO (Punto País) -->
+      <div class="detail-panel" id="panel-muvit-domestico-pp">
+        <div class="detail-header red">
+          <div><h3>🧳 Muvit Travel - Viajero Doméstico</h3><p>Seguro Colectivo de Viaje – Muvit · Plan Viajero Doméstico</p></div>
+          <button class="detail-close" onclick="closePanelRed('muvit-domestico-pp')">✕</button>
+        </div>
+        <div class="view-tabs">
+          <button class="view-btn active" onclick="openView('muvit-domestico-pp','cubre',this)"><span class="view-btn-icon">✅</span><span class="view-btn-label">Qué Cubre</span></button>
+          <button class="view-btn" onclick="openView('muvit-domestico-pp','planes',this)"><span class="view-btn-icon">💰</span><span class="view-btn-label">Planes</span></button>
+          <button class="view-btn" onclick="openView('muvit-domestico-pp','activacion',this)"><span class="view-btn-icon">🚀</span><span class="view-btn-label">Gestionar Activación</span></button>
+          <button class="view-btn" onclick="openView('muvit-domestico-pp','cierre',this)"><span class="view-btn-icon">🎯</span><span class="view-btn-label">Cierre Efectivo</span></button>
+        </div>
+        <div id="view-muvit-domestico-pp-cubre" class="view-content active">
+          <div class="content-section">
+            <div class="content-label">Condiciones de cobertura</div>
+            <ul class="check-list">
+              <li>El viaje debe tener una duración máxima de 15 días.</li>
+              <li>Debe realizarse dentro del período de vigencia del seguro individual.</li>
+            </ul>
+          </div>
+          <div class="content-section">
+            <div class="content-label">Coberturas incluidas</div>
+            <ul class="check-list">
+              <li><strong>Muerte accidental durante el viaje:</strong> suma asegurada a los beneficiarios si el fallecimiento es consecuencia directa de un accidente ocurrido durante el viaje.</li>
+              <li><strong>Desmembramiento:</strong> indemnización según la tabla (% de la suma asegurada) por pérdida de miembros u órganos por accidente.</li>
+              <li><strong>Beneficios médicos y dentales:</strong> gastos médicos por accidente o enfermedad (honorarios, internación, anestesia, exámenes, enfermería hasta 3 turnos/día por 30 días, ambulancia hasta 25%), atención odontológica de emergencia, traslado médico de emergencia, medicamentos, repatriación de restos, hotel por convalecencia (incluye COVID-19), tiquete y hotel para familiares y traslado de menores de 15 años.</li>
+              <li><strong>Cancelaciones y cambios de viaje:</strong> demora de viaje (12 h o más), cancelación anticipada (al menos 8 días antes) e interrupción de viaje ya iniciado.</li>
+              <li><strong>Equipaje:</strong> pérdida de equipaje y demora de equipaje (más de 24 h).</li>
+              <li><strong>Asistencia teledoctor:</strong> médico general por videollamada o chat durante el viaje.</li>
+            </ul>
+          </div>
+          <div class="content-section"><div class="content-label">📞 Contacto y reclamación</div><div class="highlight-box">Para reportar un evento o consultar el estado de un reclamo:<br><strong>Teléfono: (+506) 4404-4293</strong><br><strong>WhatsApp: +54 (911) 2472-6164</strong></div></div>
+          <div class="content-section"><div class="content-label">📞 Contacto</div><div class="highlight-box"><strong>Servicio al Cliente:</strong> 2503-2710<br><strong>Coordinación Asistencias:</strong> 2503-2710 opción 2<br><strong>Reclamos aseguradora o Pago de siniestros:</strong> BCRSegurosAutoexpedibles@bancobcr.com</div></div>
+        </div>
+        <div id="view-muvit-domestico-pp-planes" class="view-content">
+          <div class="highlight-box green" style="margin-bottom:14px"><strong>Plan Viajero Doméstico · Sin restricción de edad · Prima anual: $14.69</strong></div>
+          <div style="overflow-x:auto">
+            <table class="plans-table">
+              <tr><th>Beneficios Médicos y Dentales</th><th>Máximo de Cobertura</th></tr>
+              <tr><td>Emergencia Médica</td><td>US$ 10,000</td></tr>
+              <tr><td>Transferencia Médica</td><td>US$ 5,000</td></tr>
+              <tr><td>Repatriación de Restos / Sanitaria</td><td>US$ 5,000</td></tr>
+              <tr><td>Gastos Dentales</td><td>US$ 500</td></tr>
+              <tr><td>Medicamentos</td><td>US$ 500</td></tr>
+              <tr><td>Boleto Aéreo para Familiar (por emergencia)</td><td>Hasta US$ 750</td></tr>
+              <tr><td>Gastos de Hotel para Familiar (por hospitalización)</td><td>US$ 750 (US$ 75 por día)</td></tr>
+              <tr><td>Gastos de Hotel por recuperación</td><td>US$ 750 (US$ 75 por día)</td></tr>
+              <tr><td>Boleto Aéreo para Menor (por emergencia)</td><td>Hasta US$ 750</td></tr>
+              <tr><th>Beneficios de Cancelaciones y Cambios</th><th>Máximo de Cobertura</th></tr>
+              <tr><td>Demora de Viaje</td><td>US$ 100</td></tr>
+              <tr><td>Cancelación de Viaje</td><td>Hasta US$ 350</td></tr>
+              <tr><td>Interrupción de Viaje</td><td>US$ 150</td></tr>
+              <tr><th>Beneficios de Equipaje</th><th>Máximo de Cobertura</th></tr>
+              <tr><td>Pérdida de Equipaje</td><td>US$ 400</td></tr>
+              <tr><td>Demora de Equipaje</td><td>US$ 100</td></tr>
+              <tr><th>Beneficios de Accidentes Personales</th><th>Máximo de Cobertura</th></tr>
+              <tr><td>Muerte Accidental</td><td>US$ 10,000</td></tr>
+              <tr><td>Desmembramiento</td><td>US$ 10,000</td></tr>
+              <tr class="section-row red"><td><strong>Prima Anual</strong></td><td><strong>$14.69</strong></td></tr>
+            </table>
+          </div>
+          <div class="content-section" style="margin-top:16px">
+            <div class="content-label">Tabla de desmembramiento (% de la suma asegurada)</div>
+            <div style="overflow-x:auto">
+              <table class="plans-table">
+                <tr><th>Pérdida de órganos o miembros</th><th>% de la suma asegurada</th></tr>
+                <tr><td>Ambas manos</td><td>100%</td></tr><tr><td>Ambos pies</td><td>100%</td></tr><tr><td>Ambos ojos</td><td>100%</td></tr><tr><td>Una mano y la visión de un ojo / un pie y la visión de un ojo</td><td>100%</td></tr><tr><td>Una mano y un pie</td><td>100%</td></tr><tr><td>Una mano o un pie</td><td>50%</td></tr><tr><td>Visión de un ojo</td><td>30%</td></tr><tr><td>Dedo pulgar de cualquier mano</td><td>15%</td></tr><tr><td>Dedo índice de cualquier mano</td><td>10%</td></tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div id="view-muvit-domestico-pp-activacion" class="view-content">
+          <div class="activation-grid">
+            <div class="activation-card">
+              <div class="activation-icon">📋</div>
+              <div class="activation-title">Plataforma S2+</div>
+              <div class="activation-desc">Ingresa la venta del cliente directamente en la plataforma S2+ para emisión y cobro inmediato.</div>
+              <a class="activation-btn" href="https://s2plus.online/private" target="_blank">🚀 Ingresar Venta</a>
+            </div>
+          </div>
+        </div>
+        <div id="view-muvit-domestico-pp-cierre" class="view-content">
+          <div class="cierre-section">
+            <div class="cierre-section-header"><span class="cierre-section-icon">🎙️</span><span class="cierre-section-title">Guion de Venta</span></div>
+            <div class="guion-step"><div class="guion-num">1</div><div class="guion-label">Apertura</div><div class="guion-text">"¿Tiene pensado viajar próximamente? Con un solo pago al año puede protegerse en todos sus viajes de hasta 15 días."</div></div>
+            <div class="guion-step"><div class="guion-num">2</div><div class="guion-label">Beneficios</div><div class="guion-text">"Muvit Travel cubre emergencias médicas hasta US$10,000, equipaje, cancelaciones, asistencia de un médico por videollamada y mucho más."</div></div>
+            <div class="guion-step"><div class="guion-num">3</div><div class="guion-label">Cierre</div><div class="guion-text">"Todo esto por apenas <em>$14.69 al año</em>, sin restricción de edad. ¿Lo activamos hoy mismo?"</div></div>
+          </div>
+          <div class="cierre-section">
+            <div class="cierre-section-header"><span class="cierre-section-icon">💬</span><span class="cierre-section-title">Manejo de Objeciones</span></div>
+            <div class="objecion-item"><div class="objecion-q" onclick="toggleObjRed(this)"><span class="objecion-q-icon">💬</span>Solo viajo una vez al año<span class="objecion-arrow">▼</span></div><div class="objecion-a">Justamente por eso conviene: por un único pago anual de $14.69 queda cubierto en ese viaje y en cualquier otro de hasta 15 días durante el año.</div></div>
+            <div class="objecion-item"><div class="objecion-q" onclick="toggleObjRed(this)"><span class="objecion-q-icon">💬</span>Mi tarjeta ya trae seguro de viaje<span class="objecion-arrow">▼</span></div><div class="objecion-a">Las coberturas de tarjeta suelen ser limitadas. Este plan ofrece hasta US$10,000 en emergencia médica, equipaje, cancelaciones y asistencia teledoctor, a un costo muy bajo.</div></div>
+          </div>
+        </div>
+        <div class="zona-asesor-wrap">
+          <button class="zona-asesor-toggle" id="asesor-toggle-muvit-domestico-pp" onclick="toggleZonaAsesor('muvit-domestico-pp')">
+            <div class="zona-asesor-left"><span class="zona-asesor-icon">🎓</span><div class="zona-asesor-text"><span class="zona-asesor-title">ZONA ASESOR</span><span class="zona-asesor-sub">Formación interna: aprende el producto y cómo venderlo</span></div></div>
+            <span class="zona-asesor-arrow">▼</span>
+          </button>
+          <div class="zona-asesor-content" id="asesor-content-muvit-domestico-pp">
+            <div class="asesor-tabs">
+              <button class="asesor-tab active" onclick="openAsesorTab('muvit-domestico-pp','por-que',this)">💡 Por qué Promoverlo</button><button class="asesor-tab" onclick="openAsesorTab('muvit-domestico-pp','perfiles',this)">👤 Perfiles</button><button class="asesor-tab" onclick="openAsesorTab('muvit-domestico-pp','exclusiones',this)">🚫 Exclusiones</button>
+            </div>
+            <div id="asesor-muvit-domestico-pp-por-que" class="asesor-content active"><div class="content-section">
+              <div class="content-label">🎯 Por qué es fundamental hablarlo</div>
+              <div class="highlight-box">Un seguro de viaje anual, accesible y sin restricción de edad: ideal para ofrecer a cualquier cliente que viaje, aunque sea una vez al año.</div>
+              <ul class="check-list">
+                <li>Cobertura médica robusta en viaje (hasta US$10,000) a un precio muy bajo.</li>
+                <li>Incluye equipaje, cancelaciones, repatriación y asistencia teledoctor.</li>
+                <li>Un solo pago anual de $14.69 cubre viajes de hasta 15 días.</li>
+                <li>Sin restricción de edad: aplica a toda la familia.</li>
+              </ul>
+            </div></div><div id="asesor-muvit-domestico-pp-perfiles" class="asesor-content"><div class="profiles-grid">
+              <div class="profile-card"><div class="profile-icon">✈️</div><div class="profile-name">Viajero frecuente</div><div class="profile-desc">Viaja varias veces al año y necesita respaldo médico y de equipaje.</div></div>
+              <div class="profile-card"><div class="profile-icon">👨‍👩‍👧</div><div class="profile-name">Familias</div><div class="profile-desc">Viajan juntos; sin restricción de edad aplica a todos.</div></div>
+              <div class="profile-card"><div class="profile-icon">🧳</div><div class="profile-name">Viajero ocasional</div><div class="profile-desc">Un pago anual lo cubre en ese viaje y en cualquier otro del año.</div></div>
+              <div class="profile-card"><div class="profile-icon">👴</div><div class="profile-name">Adulto mayor</div><div class="profile-desc">Sin restricción de edad, con cobertura médica en viaje.</div></div>
+            </div></div><div id="asesor-muvit-domestico-pp-exclusiones" class="asesor-content"><ul class="excl-list">
+              <li>Aviación privada como tripulante, piloto, mecánico o pasajero en taxis aéreos o aeronaves no comerciales.</li>
+              <li>Pruebas o contiendas de velocidad, resistencia o seguridad en vehículos de cualquier tipo.</li>
+              <li>Piloto, mecánico en vuelo o tripulación de cualquier aeronave (comercial y privado).</li>
+              <li>Conductor o pasajero de motocicletas cuando no sea su medio de transporte habitual, y/o vehículos de motor acuáticos o terrestres similares.</li>
+              <li>Paracaidismo, buceo, alpinismo, charrería, esquí, tauromaquia, espeleología, motonáutica y deportes aéreos; práctica profesional de cualquier deporte.</li>
+              <li>Cuando el pago, beneficio o reclamación constituya una infracción de las resoluciones de las Naciones Unidas.</li>
+              <li>Enfermedad contagiosa, virus, epidemia o pandemia declarada por la OMS o la autoridad competente, a excepción de COVID-19.</li>
+            </ul></div>
           </div>
         </div>
       </div>
