@@ -710,7 +710,7 @@
   .boletin-title { font-size: 22px; font-weight: 800; color: var(--bcr-blue); display: flex; align-items: center; gap: 8px; letter-spacing:-0.3px; }
   .boletin-sub { font-size: 14px; color: var(--gray-600); margin-top: 3px; }
   /* Imagen del boletín ~40% más grande */
-  #boletin-grid { grid-template-columns: minmax(0, 400px); }
+  #boletin-grid { grid-template-columns: repeat(auto-fill, minmax(330px, 1fr)); }
   @media (max-width: 600px) { .boletin-section { padding: 18px 14px 20px; } #boletin-grid { grid-template-columns: 1fr; } }
 
   /* ===== ACELERADOR ===== */
@@ -2796,6 +2796,10 @@
       <div class="acelerador-card" onclick="openLightbox('acelerador/assa-premia-noviembre-2026.webp')">
         <img src="acelerador/assa-premia-noviembre-2026.webp" alt="ASSA Premia tu Esfuerzo – del 2 al 30 de noviembre" loading="lazy">
         <div class="acelerador-cap">ASSA Premia tu Esfuerzo · 2 al 30 de noviembre</div>
+      </div>
+      <div class="acelerador-card" onclick="openLightbox('acelerador/muvit-domestico-noviembre-2026.jpg')">
+        <img src="acelerador/muvit-domestico-noviembre-2026.jpg" alt="Acelerador Muvit Doméstico – del 16 al 30 de noviembre" loading="lazy">
+        <div class="acelerador-cap">Acelerador Muvit Doméstico · 16 al 30 de noviembre · ₡400 c/u (mín. 7 ventas)</div>
       </div>
     </div>
   </div>
